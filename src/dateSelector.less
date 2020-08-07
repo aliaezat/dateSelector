@@ -1,0 +1,92 @@
+@highlightColor: #129793;
+@navigationWidth: 23px;
+@dayNumberWidth: 19px;
+@hoverOpacity: 0.8;
+
+.ds_wrapper{
+    position: relative;    
+    padding-top: 5px;
+    min-height: 65px;
+
+    a{
+        text-decoration: none;
+        color: inherit;
+        cursor: pointer;
+    }
+
+    .ds_title{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px;
+        color:@highlightColor;
+        font-weight: bold;
+    }
+
+    .ds_navigation{
+        width: 100%;
+    }
+
+    .ds_leftNavigation,
+    .ds_rightNavigation {
+        position: absolute;
+        cursor: pointer;
+        border-radius: 50%;
+        color: white;
+        text-align: center;
+        width: @navigationWidth; 
+        height: @navigationWidth;   
+        background-color: @highlightColor;          
+        
+        &:hover{
+            opacity: @hoverOpacity;
+        }
+    }
+
+    .ds_leftNavigation {        
+        left:0;                    
+    }
+
+    .ds_rightNavigation {        
+        right: 0;                
+    }
+
+    .ds_days{
+        position: absolute;
+        width: auto;
+        display: table;
+        margin: 0 @navigationWidth;
+
+        .ds_day {
+            display: table-cell;   
+            
+            > div{
+                clear: both;    
+                text-align: center;
+                cursor: pointer;
+            }
+
+            > .ds_dayNumber{    
+                border-radius: 50%;
+                width: @dayNumberWidth;
+                height: @dayNumberWidth;    
+                margin: 0 auto;    
+                vertical-align: middle;
+                font-size: 14px;
+            }
+
+            &.selected > .ds_dayNumber{    
+                background-color:@highlightColor;
+                color: white;
+
+                &:hover{
+                    opacity: @hoverOpacity;
+                }
+            }
+
+            &.selected > .ds_dayName{    
+                color:@highlightColor;
+            }
+        }
+    }
+}
+
