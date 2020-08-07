@@ -2,6 +2,8 @@
 
 A simple light weight plugin to select date. The plugin has 2 modes for navigating dates: by week or month.
 
+![Demo Image](/demo/images/dateSelectorDemoImage.png)
+
 ## Dependencies
 
 - jQuery
